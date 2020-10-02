@@ -22,7 +22,7 @@ void vectorFill (std::vector<double>& vec, double left_edge, double right_edge, 
 }
 
 //Фунция нахождения количества расчетов от P и q
-int N (double P, double q){
+int Number_of_Tests (double P, double q){
     return static_cast<int>(log(1 - P) / log(1 - q));
 }
 
@@ -31,16 +31,16 @@ template <typename type>
 std::vector<type> MultipleN (const std::vector<double>& P,const double q){
     std::vector<type> values;
     for (size_t i = 0; i < P.size(); i++){
-        values.push_back(N(P[i], q));
+        values.push_back(Number_of_Tests(P[i], q));
     }
     return values;
 }
 
-//Функция по варианту (15)
+//Мультимодальная функция по варианту (15)
 double f(double x) {
     return pow(x, 2) * sin(x);
 }
-//Функция по варианту (15)
+//Мультимодальная функция по варианту (15)
 double f_m (double x) {
     return f(x) * sin(5*x);
 }
